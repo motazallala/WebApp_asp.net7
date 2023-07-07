@@ -1,0 +1,55 @@
+﻿@model Co132.Models.Course
+
+@{
+    ViewData["Title"] = "Derails";
+}
+
+<h1>Derails</h1>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.CourseName)</td>
+            <td>@Model.CourseName</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.Price)</td>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.CourseDescription)</td>
+            <td>@Model.CourseDescription</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.Duration)</td>
+            <td>@Model.Duration</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.StartDate)</td>
+            <td>@Model.StartDate</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.EndDate)</td>
+            <td>@Model.EndDate</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x =>x.IsPublished)</td>
+            <td>
+                @if (Model.IsPublished)
+                {
+                    <span class="text-success">فعالة</span>
+                }
+                else
+                {
+                    <span class="text-danger">غير فعالة</span>
+                }
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="AllCourses">Back to List</a>
+</div>

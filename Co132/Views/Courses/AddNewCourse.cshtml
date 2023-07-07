@@ -1,0 +1,78 @@
+﻿@model Co132.Models.Course
+
+@{
+    ViewData["Title"] = "AddNewCourse";
+}
+
+<h1>AddNewCourse</h1>
+
+<h4>Course</h4>
+<hr />
+<div>
+    <h4>Course</h4>
+    <hr />
+    <form asp-action="AddNewCourse" asp-controller="Courses" method="post">
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.CourseId)</td>
+                <td><input asp-for="CourseId" class="form-control" /></td>
+                
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.CourseName)</td>
+                <td><input asp-for="CourseName" class="form-control" />
+                    <span class="text-danger" asp-validation-for="CourseName"></span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.CourseDescription)</td>
+                <td><input asp-for="CourseDescription" class="form-control" />
+                    <span class="text-danger" asp-validation-for="CourseDescription"></span>
+                </td>
+               
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.Price)</td>
+                <td><input asp-for="Price" class="form-control" />
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.Duration)</td>
+                <td><input asp-for="Duration" class="form-control" /> </td>
+             
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.StartDate)</td>
+                <td><input asp-for="StartDate" class="form-control" /></td>
+          
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.EndDate)</td>
+                <td><input asp-for="EndDate" class="form-control" /></td>
+               
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(x =>x.IsPublished)</td>
+                <td>
+                    <input asp-for="IsPublished" />
+                </td>
+             
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" class="btn btn-outline-primary" value="Save" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="AllCourses">Back to List</a>
+</div>
+
